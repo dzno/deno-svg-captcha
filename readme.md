@@ -5,7 +5,7 @@ svg captcha generator for Deno
 ### usage:
 
 ```ts
-import { makeCaptcha } https://deno.land/x/svg_captcha@v1.0.0/mod.ts
+import { makeCaptcha } "https://deno.land/x/svg_captcha@v1.0.0/mod.ts"
 
 const captcha = makeCaptcha()
 
