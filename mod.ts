@@ -1,0 +1,1 @@
+export { makeCaptcha } from "./create.ts"
