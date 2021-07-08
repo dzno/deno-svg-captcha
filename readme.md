@@ -111,6 +111,6 @@ const captcha = makeCaptcha({
 ### Run test
 
 ```shell
-deno run --allow-net https://deno.land/x/svg_captcha@v1.0.0/test.ts
+deno run --allow-net https://deno.land/x/svg_captcha@v1.0.0/test.ts -p=3000 [--port=port, -p=port](default port 3000)
 
 ```
