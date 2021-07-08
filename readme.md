@@ -107,3 +107,10 @@ const captcha = makeCaptcha({
     }
 })
 ```
+
+### Run test
+
+```shell
+deno run --allow-net https://deno.land/x/svg_captcha@v1.0.0/test.ts
+
+```
