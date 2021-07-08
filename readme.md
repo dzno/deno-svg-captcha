@@ -99,7 +99,7 @@ const captcha = makeCaptcha({
         
         fontSize: 2, // (number) text font size - measuring unit rem
         
-        randomFontSize?: {min:number, max:number} // (object) random text font size for each character You must specify the minimum and the maximum font size - measuring unit rem NOTE: When this option is enabled, the fontSize option will be ignored if it was previously selected
+        randomFontSize?: {min:number, max:number}, // (object) random text font size for each character You must specify the minimum and the maximum font size - measuring unit rem NOTE: When this option is enabled, the fontSize option will be ignored if it was previously selected
         
         rotate: number, // (number) degree of rotation of letters NOTE: When this option is enabled, the characters are rotated randomly within the specified number range from negative to positive (e.g: textOptions.rotate = 30,// the characters are rotated randomly between 30 and -30 degree) by default: 0
         
@@ -107,4 +107,3 @@ const captcha = makeCaptcha({
     }
 })
 ```
-"# deno-svg-captcha" 
