@@ -5,13 +5,13 @@ svg captcha generator for Deno
 ### usage:
 
 ```ts
-import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.0.0/mod.ts"
+import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.0.0/mod.ts";
 
-const captcha = makeCaptcha()
+const captcha = makeCaptcha();
 
-const svgContext = captcha.svgContext
+const svgContext = captcha.svgContext;
 
-const text = captcha.text
+const text = captcha.text;
 ```
 
 #### Example with oak:
@@ -109,7 +109,9 @@ const captcha = makeCaptcha({
 ```
 
 ### Run test
-``[--port=<port>, -p=<port>](default: 3000)``
+
+`[--port=<port>, -p=<port>](default: 3000)`
+
 ```shell
 deno run --allow-net https://deno.land/x/svg_captcha@v1.0.0/test.ts -p=3000
 ```

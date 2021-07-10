@@ -1,7 +1,7 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import { parse } from "https://deno.land/std@0.100.0/flags/mod.ts";
 import { makeCaptcha } from "./mod.ts";
-const port = parse(Deno.args)['-p'] || parse(Deno.args)['-p'] || 3000
+const port = parse(Deno.args)["-p"] || parse(Deno.args)["-p"] || 3000;
 const app = new Application();
 const router = new Router();
 
@@ -27,5 +27,5 @@ router.get("/captcha", (ctx) => {
     httpOnly: false,
   });
 });
-console.log(`You can see the result here http://localhost:${port}/captcha`)
+console.log(`You can see the result here http://localhost:${port}/captcha`);
 await app.listen({ port });
