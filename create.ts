@@ -1,5 +1,5 @@
 import { uniqueString } from "./deps.ts";
-import { randomHexColor, randomNumber } from "./utilities.ts";
+import { randomHexColor, randomNumber, textHash } from "./utilities.ts";
 import { CaptchaOptions } from "./types.ts";
 
 export function makeCaptcha(captchaOptions?: CaptchaOptions) {
@@ -44,7 +44,7 @@ export function makeCaptcha(captchaOptions?: CaptchaOptions) {
   }
   svgContext += `</svg>`;
   return {
-    text,
+    text: textHash(text),
     svgContext,
   };
 }
