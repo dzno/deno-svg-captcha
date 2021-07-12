@@ -5,20 +5,20 @@ svg captcha generator for Deno
 ### usage:
 
 ```ts
-import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.0.0/mod.ts";
+import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.1.0/mod.ts"
 
-const captcha = makeCaptcha();
+const captcha = makeCaptcha()
 
-const svgContext = captcha.svgContext;
+const svgContext = captcha.svgContext
 
-const text = captcha.text;
+const text = captcha.text
 ```
 
 #### Example with oak:
 
 ```ts
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.0.0/mod.ts";
+import { makeCaptcha } from "https://deno.land/x/svg_captcha@v1.1.0/mod.ts";
 const app = new Application();
 const router = new Router();
 
@@ -106,12 +106,40 @@ const captcha = makeCaptcha({
         
     }
 })
+
 ```
-
+### Captcha validation
+``in server side(Deno App):``
+```ts
+import { isValid } from "https://deno.land/x/svg_captcha@v1.1.0/mod.ts"
+/**
+* This function accepts two parameters
+* @params {string} userInput, user input
+* @params {string} svg_captcha_text, svg_captcha_text cookie value
+* @returns {boolean} true if user input is valid false if no
+*/
+isValid(userInput, svg_captcha_text)
+```
+``in client side(The browser):``
+add this code to your html page
+```html
+<!-- html file-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script>
+<script src="https://deno.land/x/svg_captcha@v1.1.0/validate.js"></script>
+```
+And you can use the ``isValid`` function to validate Match user input with captcha text
+```js
+/**
+* This function accepts two parameters
+* @params {string} userInput, user input
+* @returns {boolean} true if user input is valid false if no
+* Note: When sending a request to the server to generate. SVG Captcha svg_captcha_text ا
+* svg captcha text It must have the value captcha.text
+*/
+isValid(userInput)
+```
 ### Run test
-
-`[--port=<port>, -p=<port>](default: 3000)`
-
+``[--port=<port>, -p=<port>](default: 3000)``
 ```shell
-deno run --allow-net https://deno.land/x/svg_captcha@v1.0.0/test.ts -p=3000
+deno run --allow-net https://deno.land/x/svg_captcha@v1.1.0/test.ts -p=3000
 ```
